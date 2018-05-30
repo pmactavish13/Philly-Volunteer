@@ -1,0 +1,160 @@
+<div id="newMemberModal" class="modal fade" data-id="modalNewMember" role="dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-dialog" id="newMemberRegistrationModal">
+        <div class="modal-header">
+            <h3 class="modal-title">{{formName}}</h3>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="newMemberForm" name="signup">
+                        <div class="form-group">
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div>
+                                            <label for="newEmail">Email Address</label>
+                                            <input type="email" class="form-control form-control-sm" name="newEmail" id="newEmail" required placeholder="{{newEmail}}"
+                                                value="{{emailFocus}}" onfocus="this.value='{{emailFocus}}', this.placeholder='{{emailFocus}}'">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div>
+                                            <label for="newPassword">Password</label>
+                                            <input type="password" class="form-control form-control-sm" name="newPassword" id="newPassword" required placeholder="{{newPassword}}"
+                                                value="{{newPassword}}" onfocus="this.value='{{passwordFocus}}', this.placeholder='{{passwordFocus}}'">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div>
+                                            <label for="firstName">First Name</label>
+                                            <input type="text" class="form-control form-control-sm" name="first_name" id="firstName" required placeholder="{{firstName}}"
+                                                value="{{firstNameFocus}}" onfocus="this.value='{{firstNameFocus}}', this.placeholder='{{firstNameFocus}}'">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div>
+                                            <label for="lastName">Last Name</label>
+                                            <input type="text" class="form-control form-control-sm" name="last_name" id="lastName" required placeholder="{{lastName}}"
+                                                value="{{lastNameFocus}}" onfocus="this.value='{{lastNameFocus}}', this.placeholder='{{lastNameFocus}}'">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div>
+                                            <label for="phone">Phone Number</label>
+                                            <input type="tel" class="form-control form-control-sm" name="phone" id="phone" required title="Please enter a valid phone number"
+                                                placeholder="{{phone}}" value="{{phoneFocus}}" onfocus="this.value='{{phoneFocus}}', this.placeholder='{{phoneFocus}}'">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="inOrOut">Indoors or Outdoors</label>
+                                        <select required class="form-control form-control-sm" id="selectInOrOut">
+                                            <option value="">Choose...</option>
+                                            <option value="1">Indoor</option>
+                                            <option value="2">Outdoor</option>
+                                            <option value="3">Both</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="skillsBox">
+                                <label for="skills">Special Skills - Check all that apply</label>
+                                <div class="row" style="margin-top:-10px; margin-bottom: 10px">
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="cooking" {{cooking}}>Cooking
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="gardening" {{gardening}}>Gardening
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="painting" {{painting}}>Painting
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="carpentry" {{carpentry}}>Carpentry
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="plumbing" {{plumbing}}>Plumbing
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="electrical" {{electrical}}>Electrical
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="publicRelations" {{publicRelations}}>PR
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="marketing" {{marketing}}>Marketing
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="sales" {{sales}}>Sales
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="programming" {{programming}}>Programming
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="fundRaising" {{fundRaising}}>Fundraising
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="teaching" {{teaching}}>Teaching
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="message" style="color:red; margin-bottom:8px"></div>
+                         {{!-- style="margin-top:-10px; margin-bottom: 10px" class="text-center" --}}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button id="newMemberRegistration" data-action="{{formAction}}" class="btn btn-primary btn-xl text-uppercase" type="submit"
+                                    value="{{buttonName}}">{{buttonName}}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>

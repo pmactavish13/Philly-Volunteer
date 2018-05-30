@@ -1,0 +1,22 @@
+<div class="col-md-4 col-sm-6 portfolio-item" style="margin-left:15px; margin-right:-10px;">
+    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+        <div class="portfolio-hover" style="border: solid 2px #fed136">
+            <div class="portfolio-hover-content">
+                <div class="text-muted">{{opportunity_name}}
+                    <br />{{tag_line}}
+                    <br />{{opportunity_date}} // {{opportunity_start_time}} - {{opportunity_end_time}}
+                    <br />{{organization_address}}
+                    <br />{{organization_city}}, {{organization_state}} {{organization_zip}}
+                </div>
+            </div>
+        </div>
+        <img class="img-fluid" src="{{opportunity_photo_Url}}" alt="opportunity_photo">
+    </a>
+    <div class="portfolio-caption">
+        <h4>{{organization_name}}</h4>
+        <p class="text-muted">{{opportunity_name}}</p>
+        <button class="register btn btn-primary text-uppercase" data-id="{{id}}" data-register="{{registered}} style="background-color: #fed136; color:#1c1b1a; border-radius:2px"" ">
+            {{#if registered}}Unenroll{{else}}Register{{/if}}
+        </button>
+    </div>
+</div>

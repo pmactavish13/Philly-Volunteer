@@ -1,0 +1,110 @@
+<!-- Navigation -->
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: rgb(19, 18, 18)">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">Volunteer Philadelphia</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#portfolio">Opportunities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#newMemberModal">Join Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#logInModal">Log In</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- Header -->
+<header class="masthead">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-lead-in">
+        <span>Matching Volunteers with Events</span>
+        <br>
+        <h4 style="text-align: right;">.....We find you work, you won't get paid for! ;~)</h4>
+      </div>
+      <!-- Trigger the modal with a button -->
+      <button type="button" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" data-toggle="modal" data-target="#logInModal"
+        style="margin-bottom: -100px">Log In</button>
+    </div>
+  </div>
+</header>
+
+<!-- Modal -->
+<div id="logInModal" class="modal fade" data-id="modalLogIn" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" id="login">
+      <div class="modal-header">
+        <h4 class="modal-title" style="font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;">Volunteer Log In</h4>
+      </div>
+      <div class="modal-body">
+        <form id="signin" name="signin">
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <input class="form-control" id="email" name="email" type="email" placeholder="Your Email *" onfocus="this.placeholder=''">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <input class="form-control" id="password" name="password" type="password" placeholder="Your Password *" onfocus="this.placeholder=''">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-9 message" style="margin-left:15px; margin-bottom:10px;color:red;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <input class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit" value="Log In" />
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+              <a class="btn btn-primary btn-xl text-uppercase" data-toggle="modal" data-target="#newMemberModal" style="color:white">Sign Up</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="bg-light" id="portfolio">
+  <div class="row">
+    {{#each opportunityData.opportunities}} {{> opportunity }} {{/each}}
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <p class="copyright">Copyright &copy; Volunteer Philadelphia 2018</p>
+      </div>
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-7 developers">
+        <p>Developers: Anthony Elliott / Paula MacTavish / Alexa Stefanou / Dirk Wiggins</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Start New Member Modal -->
+{{#with formData}} {{> new_members}} {{/with}}
+<!-- End New Member Modal -->

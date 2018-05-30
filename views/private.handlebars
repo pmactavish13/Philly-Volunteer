@@ -1,0 +1,157 @@
+<!-- Navigation -->
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: rgb(19, 18, 18)">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Volunteer Events</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#newOpportunityModal">Post New Event</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#newMemberModal">Member Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="/myEvents">My Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="/logout">Log Out</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<section class="bg-light" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase" style="font-size:30px">Volunteer Opportunities</h2>
+            </div>
+        </div>
+
+        {{!-- search buttons --}}
+        <div></div>
+        <form id="search" action="private" method="GET">
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="Inside">
+                    <span>Inside</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="Outside">
+                    <span>Outside</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="cooking">
+                    <span>Cooking</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="gardening">
+                    <span>Gardening</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="painting">
+                    <span>Painting</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="carpentry">
+                    <span>Carpentry</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="cooking">
+                    <span>Plumbing</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="electrical">
+                    <span>Electrical</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="marketing">
+                    <span>Marketing</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="sales">
+                    <span>Sales</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="teaching">
+                    <span>Teaching</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="publicRelations">
+                    <span>Public Relations</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="fundRaising">
+                    <span>Fund Raising</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label class="skillsLabel">
+                    <input class="skillsInput" name="skillsSearch" type="checkbox" value="Programming">
+                    <span>Programming</span>
+                </label>
+            </div>
+            <button class="ck-button" type="submit" style="color:#fed136; background-color:rgb(18, 17, 17)">Submit</button>
+            <div class="message" style="color:red;"></div>
+        </form>
+    </div>
+
+    <div class="row" style="clear: both; padding-top: 20px;">
+        {{#each opportunityData.opportunities}}
+            {{> opportunity }}
+        {{/each}}
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <p class="copyright">Copyright &copy; Volunteer Philadelphia 2018</p>
+      </div>
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-7 developers">
+        <p>Developers: Anthony Elliott / Paula MacTavish / Alexa Stefanou / Dirk Wiggins</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Start New Member Modal -->
+{{#with formData}} {{> new_members}} {{/with}}
+<!-- End New Member Modal -->
