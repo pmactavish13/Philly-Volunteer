@@ -16,7 +16,7 @@ $(document).ready(function () {
         }
         
         var newMember = validateForm();
-        
+
         if (newMember) {
             // Send the POST request.
             $.ajax("/api/signup", {
@@ -27,7 +27,6 @@ $(document).ready(function () {
                     window.location.href = response.redirectTo;
                 },
                 function (error) {
-                    console.log("HI");
                     $('.message').text('That email account is already in use.');
                 }
             );
@@ -53,10 +52,6 @@ $(document).ready(function () {
         }    
         if ($.trim($("#phone").val()) === "" || $.trim($("#phone").val()) === "123-456-7890" || $.trim($("#phone").val()) === "Please enter your Contact Number") {
             $("#phone").val(" Please enter your Contact Number");
-            return false;
-        }
-        if ($("#selectInOrOut").val() === "" || $("#selectInOrOut").val() === "Choose..." || $("#selectInOrOut").val() === "Please select an option") {
-            $("#selectInOrOut").val(" Please select an option");
             return false;
         }
 

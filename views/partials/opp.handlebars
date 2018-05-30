@@ -3,7 +3,7 @@
     <!-- Modal content-->
     <div class="modal-content modal-dialog" id="newOpportunityRegistrationModal">
         <div class="modal-header">
-            <h3 class="modal-title">New Event</h3>
+            <h3 class="modal-title">{{eventForm}}</h3>
         </div>
         <div class="modal-body">
             <div class="row">
@@ -12,63 +12,65 @@
                         <div class="form-group">
                             <div>
                                 <label for="organizationName">Organiztion Name</label>
-                                <input type="text" class="form-control form-control-sm" name="organization_name" id="organizationName" placeholder="Organization Name"
-                                    onfocus="this.placeholder=''" value="">
+                                <input type="text" class="form-control form-control-sm" name="organizationName" id="organizationName" required placeholder="{{organizationName}}"
+                                    value="{{organizationNameFocus}}" onfocus="this.value='{{organizationNameFocus}}', this.placeholder='{{organizationNameFocus}}'">
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div>
-                                        <label for="opportunityName">Event Name</label>
-                                        <input type="text" class="form-control form-control-sm" name="opportunity_name" id="opportunityName" placeholder="Event Name"
-                                            onfocus="this.placeholder=''">
+                                        <label for="newOpportunityName">Event Name</label>
+                                        <input type="text" class="form-control form-control-sm" name="opportunityName" id="opportunityName" required placeholder="{{opportunityName}}"
+                                            value="{{opportunityNameFocus}}" onfocus="this.value='{{opportunityNameFocus}}', this.placeholder='{{pportunityNameFocus}}'">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div>
                                         <label for="tagLine">Event Tag Line</label>
-                                        <input type="text" class="form-control form-control-sm" name="tag_line" id="tagLine" placeholder="Posted with Event listing"
-                                            onfocus="this.placeholder=''">
+                                        <input type="text" class="form-control form-control-sm" name="tagLine" id="tagLine" required placeholder="{{tagLine}}"
+                                            value="{{tagLineFocus}}" onfocus="this.value='{{tagLineFocus}}', this.placeholder='{{tagLineFocus}}'">
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div>
                                         <label for="phone">Contact Number</label>
-                                        <input type="numbers" class="form-control form-control-sm" name="phone" id="organizationPhone" placeholder="123-456-7890" onfocus="this.placeholder=''">
+                                        <input type="numbers" class="form-control form-control-sm" name="phone" id="organizationPhone" placeholder="{{phone}}" value="{{phoneFocus}}"
+                                            onfocus="this.value='{{phoneFocus}}', this.placeholder='{{phoneFocus}}'">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div>
-                                        <label for="eMail">Event E-mail</label>
-                                        <input type="email" class="form-control form-control-sm" name="e_mail" id="eMail" placeholder="jDoe@email.com" onfocus="this.placeholder=''">
+                                        <label for="eMail">Event E-mail </label>
+                                        <input type="email" class="form-control form-control-sm" name="eMail" id="eMail" placeholder="{{email}}" value="{{emailFocus}}"
+                                            onfocus="this.value='{{eMailFocus}}', this.placeholder='{{eMailFocus}}'">
                                     </div>
                                 </div>
                             </div>
+
                             <div>
                                 <label for="opportunityPhoto">URL address of a Photo of your event or organization.</label>
-                                <input type="url" class="form-control form-control-sm" name="opportunity_photo_Url" id="opportunityPhotoUrl" placeholder="URL Address"
-                                    onfocus="this.placeholder=''">
+                                <input type="url" class="form-control form-control-sm" name="opportunityPhotoUrl" id="opportunityPhotoUrl" placeholder="{{opportunityPhotoUrl}}"
+                                    value="{{opportunityPhotoUrlFocus}}" onfocus="this.value='{{opportunityPhotoUrlFocus}}', this.placeholder='{{opportunityPhotoUrlFocus}}'">
                             </div>
-
                             <div>
-                                <label for="address">Event Address</label>
-                                <input type="text" class="form-control form-control-sm" name="address" id="address" placeholder="1234 Main St." onfocus="this.placeholder=''">
+                                <label for="address">Address of Event</label>
+                                <input type="text" class="form-control form-control-sm" name="address" id="address" placeholder="{{address}}" value="{{addressFocus}}"
+                                    onfocus="this.value='{{addressFocus}}', this.placeholder='{{addressFocus}}'">
                             </div>
-
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div>
                                         <label for="city">City</label>
-                                        <input type="text" class="form-control form-control-sm" name="city" id="city" placeholder="City" onfocus="this.placeholder=''">
+                                        <input type="text" class="form-control form-control-sm" name="city" id="city" placeholder="{{city}}" onfocus="this.placeholder=''"
+                                            value="{{cityFocus}}" onfocus="this.value='{{cityFocus}}', this.placeholder='{{cityFocus}}'">
                                     </div>
                                 </div>
                                 <div class="col-sm-2">
                                     <div>
                                         <label for="state">State</label>
                                         <select class="form-control form-control-sm" id="selectState" class="form-control">
-                                            <option selected>Choose...</option>
+                                            <option selected>"{{selectState}}"</option>
                                             <option value="AL">AL</option>
                                             <option value="AK">AK</option>
                                             <option value="AZ">AZ</option>
@@ -125,23 +127,32 @@
                                 <div class="col-sm-4">
                                     <div>
                                         <label for="zip">Zip Code</label>
-                                        <input type="number" class="form-control form-control-sm" name="zip" id="zip" placeholder="12345" onfocus="this.placeholder=''">
+                                        <input type="number" class="form-control form-control-sm" name="zip" id="zip" placeholder="{{zip}}" value="{{zipFocus}}"
+                                            onfocus="this.value='{{zipFocus}}', this.placeholder='{{zipFocus}}'">
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <label for="date">Date</label>
-                                    <input type="date" class="form-control form-control-sm" name="date" id="date" placeholder="MM/DD/YY" onfocus="this.placeholder=''">
+                                    <div>
+                                        <label for="Date">Date</label>
+                                        <input type="date" class="form-control form-control-sm" name="date" id="date" required placeholder="{{date}}" value="{{dateFocus}}"
+                                            onfocus="this.value='{{dateFocus}}', this.placeholder='{{dateFocus}}'">
+                                    </div>
                                 </div>
                                 <div class="col-sm-4">
-                                    <label for="startTime">Start Time</label>
-                                    <input type="time" class="form-control form-control-sm" name="startTime" id="startTime" placeholder="HH:mm" onfocus="this.placeholder=''">
+                                    <div>
+                                        <label for="startTime">Start Time</label>
+                                        <input type="time" class="form-control form-control-sm" name="startTime" id="startTime" required placeholder="{{startTime}}" value="{{startTimeFocus}}"
+                                            onfocus="this.value='{{startTimeFocus}}', this.placeholder='{{startTimeFocus}}'">
+                                    </div>
                                 </div>
                                 <div class="col-sm-4">
-                                    <label for="endTime">End Time</label>
-                                    <input type="time" class="form-control form-control-sm" name="endTime" id="endTime" placeholder="HH:mm" onfocus="this.placeholder=''">
+                                    <div>
+                                        <label for="endTime">End Time</label>
+                                        <input type="time" class="form-control form-control-sm" name="endTime" id="endTime" required placeholder="{{endTime}}" value="{{endTimeFocus}}"
+                                            onfocus="this.value='{{endTimeFocus}}', this.placeholder='{{endTimeFocus}}'">
+                                    </div>
                                 </div>
                             </div>
 
@@ -149,7 +160,7 @@
                                 <div class="col-sm-6">
                                     <label for="inOrOut">Indoors or Outdoors</label>
                                     <select required class="form-control form-control-sm" id="opportunitySelectInOrOut">
-                                        <option value="">"Choose..."</option>
+                                        <option value="">"{{inOrOut}}"</option>
                                         <option value="1">Indoor</option>
                                         <option value="2">Outdoor</option>
                                         <option value="3">Both</option>
@@ -157,45 +168,27 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="numNeeded">Volunteers Needed</label>
-                                    <input type="number" class="form-control form-control-sm" name="volunteers_needed" id="volunteersNeeded" placeholder="0"
-                                        onfocus="this.placeholder=''">
+                                    <input type="number" class="form-control form-control-sm" name="volunteers_needed" id="volunteersNeeded" required placeholder="{{volunteersNeeded}}"
+                                        value="{{volunteersNeededFocus}}" onfocus="this.value='{{volunteersNeededFocus}}', this.placeholder='{{volunteersNeededFocus}}'">
                                 </div>
                             </div>
                             <div id="skillsBox">
-                                <label for="skills">Special Skills - Check any that are Needed</label>
+                                <label for="skills">Special Skills - Check all that apply</label>
                                 <div class="row" style="margin-top:-10px; margin-bottom: 10px">
                                     <div class="col-sm-3">
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="cooking">Cooking
+                                                <input type="checkbox" class="form-check-input" name="skills" value="cooking" {{cooking}}>Cooking
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="gardening">Gardening
+                                                <input type="checkbox" class="form-check-input" name="skills" value="gardening" {{gardening}}>Gardening
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="painting">Painting
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-3">
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="carpentry">Carpentry
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="plumbing">Plumbing
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="electrical">Electrician
+                                                <input type="checkbox" class="form-check-input" name="skills" value="painting" {{painting}}>Painting
                                             </label>
                                         </div>
                                     </div>
@@ -203,17 +196,17 @@
                                     <div class="col-sm-3">
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="publicRelations">PR
+                                                <input type="checkbox" class="form-check-input" name="skills" value="carpentry" {{carpentry}}>Carpentry
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="marketing">Marketing
+                                                <input type="checkbox" class="form-check-input" name="skills" value="plumbing" {{plumbing}}>Plumbing
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="fundRaising">Fund Raising
+                                                <input type="checkbox" class="form-check-input" name="skills" value="electrical" {{electrical}}>Electrical
                                             </label>
                                         </div>
                                     </div>
@@ -221,27 +214,47 @@
                                     <div class="col-sm-3">
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="programming">Programming
+                                                <input type="checkbox" class="form-check-input" name="skills" value="publicRelations" {{publicRelations}}>PR
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="sales">Sales
+                                                <input type="checkbox" class="form-check-input" name="skills" value="marketing" {{marketing}}>Marketing
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="skills" value="teaching">Teaching
+                                                <input type="checkbox" class="form-check-input" name="skills" value="sales" {{sales}}>Sales
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="programming" {{programming}}>Programming
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="fundRaising" {{fundRaising}}>Fundraising
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="skills" value="teaching" {{teaching}}>Teaching
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="message" style="color:red; margin-bottom: 10px"></div>
                         <div class="row">
                             <div class="col-sm-12">
-                                <button class="btn btn-primary btn-xl text-uppercase" type="submit">Submit</button>
+                                <button id="newOpportunityRegistration" data-action="{{formAction}}" class="btn btn-primary btn-xl text-uppercase" type="submit"
+                                    value="{{buttonName}}">{{buttonName}}</button>
                             </div>
                         </div>
                     </form>

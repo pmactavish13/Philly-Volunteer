@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#newOpportunityModal">Post New Event</a>
+                    <a class="nav-link js-scroll-trigger" data-id="New Event" data-toggle="modal" data-target="#newOpportunityModal">Post New Event</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#newMemberModal">Member Profile</a>
@@ -154,4 +154,8 @@
 
 <!-- Start New Member Modal -->
 {{#with formData}} {{> new_members}} {{/with}}
+<!-- End New Member Modal -->
+
+<!-- Start New Member Modal -->
+{{#with opportunityData}} {{> new_opportunity }} {{/with}}
 <!-- End New Member Modal -->

@@ -67,6 +67,7 @@ a:hover {
   .btn {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 700;
+    cursor: pointer;
   }
   
   .btn-xl {
@@ -210,11 +211,6 @@ a:hover {
     }
   }
   
-  /* #portfolio .portfolio-item {
-    right: 0;
-    margin: 0 0 15px;
-  } */
-  
   #portfolio .portfolio-item .portfolio-link {
     position: relative;
     display: block;
@@ -288,12 +284,12 @@ a:hover {
     }
   }
 
-  #newMemberRegistrationModal {
+  #newMemberRegistrationModal, #newOpportunityRegistrationModal {
     border: solid 2px #fed136;
   }
 
   #skillsBox {
-    margin-left: -20px;
+    margin-left: -22px;
   }
   
   footer {
@@ -323,27 +319,36 @@ a:hover {
     width: 130px;
     height: 30px;
     text-align: center;
+    cursor:pointer;
 }
  
  .ck-button  {
      text-align:center;
      padding:3px 0px;
      display:block;
+     cursor:pointer;
  }
  
  .ck-button label input {
      position:absolute;
      top:-10px;
+     cursor:pointer;
  }
 
  .ck-button input:checked + span {
      color: #fed136;
      background-color:rgb(34, 31, 31);
+     cursor:pointer;
+ }
+
+ .ck-button, span {
+   cursor:pointer
  }
 
 #ck-button input:checked+span {
     color: #fed136;
     background-color: rgb(34, 31, 31);
+    cursor:pointer;
 }
 
 input:invalid {
